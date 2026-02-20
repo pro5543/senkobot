@@ -18,8 +18,11 @@ from aiogram.types import (
 
 # ================== НАСТРОЙКИ ==================
 
-TOKEN = "BOT_TOKEN"
-   # вставь НОВЫЙ токен (старый отозвать в BotFather)
+import os
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+if not BOT_TOKEN:
+    raise RuntimeError("BOT_TOKEN is not set")
 
 
 
